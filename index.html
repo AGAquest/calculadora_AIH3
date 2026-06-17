@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Combate - DoTs y Sprites</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sistema de Combate</h1>
+    
+    <div class="turn-counter">
+      <h2>Turno Actual: <span id="turnoDisplay">1</span></h2>
+    </div>
+
+    <div class="battlefield">
+      <div class="card" id="char1">
+        
+        <div class="input-group">
+          <label>Seleccionar Personaje</label>
+          <select id="selector1">
+            <option value="">-- Personalizado --</option>
+            <option value="Ese">Ese</option>
+            <option value="Kim">Kim</option>
+          </select>
+        </div>
+
+        <div class="static-panel">
+          <div class="img-placeholder" id="img-container1">
+            <img id="sprite1" src="assets/default.png" alt="Sprite P1" onerror="this.src=''; this.alt='Sin Imagen'">
+          </div>
+          <div class="stats-list">
+            <div class="stat-row"><strong>Vida Max:</strong> <span id="base-vida1">-</span></div>
+            <div class="stat-row"><strong>Defensa:</strong> <span id="base-defensa1">-</span></div>
+            <div class="stat-row"><strong>Fuerza:</strong> <span id="base-fuerza1">-</span></div>
+            <div class="stat-row"><strong>Inteligencia:</strong> <span id="base-inteligencia1">-</span></div>
+            <div class="stat-row"><strong>Poder:</strong> <span id="base-poder1">-</span></div>
+            <div class="stat-row"><strong>Velocidad:</strong> <span id="base-velocidad1">-</span></div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="interactive-panel">
+          <div class="input-group">
+            <label>Nombre Actual</label>
+            <input type="text" id="name1" placeholder="Nombre" value="Jugador 1">
+          </div>
+          
+          <div class="stats-grid">
+            <div class="input-group">
+              <label>Vida Actual</label>
+              <input type="number" id="vida1" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Defensa</label>
+              <input type="number" id="defensa1" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Fuerza</label>
+              <input type="number" id="fuerza1" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Inteligencia</label>
+              <input type="number" id="inteligencia1" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Poder</label>
+              <input type="number" id="poder1" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Velocidad</label>
+              <input type="number" id="velocidad1" min="0" value="0">
+            </div>
+          </div>
+
+          <div class="action-section">
+            <div class="input-group">
+              <label>Acción a realizar</label>
+              <select id="accion1">
+                <option value="fuerza">Ataque Físico (Fuerza)</option>
+                <option value="poder">Ataque Mágico (Poder)</option>
+                <option value="velocidad">Esquive / Velocidad</option>
+                <option value="defensa">Bloqueo (Defensa)</option>
+                <option value="canalizacion">Canalización</option>
+                <option value="infusion">Infusión</option>
+                <option value="disparo">Disparo</option>
+                <option value="disparo_infundido">Disparo Infundido</option>
+                <option value="defensa_imbuida">Defensa Imbuida</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Dado Acción (1-10)</label>
+              <input type="number" id="dado1" min="1" max="10" value="5">
+            </div>
+          </div>
+
+          <div class="dot-section" id="dotPanel1" style="display: none;">
+            <h4>🩸 Aplicar DoT al Enemigo</h4>
+            <div class="input-group">
+              <label>Seleccionar DoTs (Ctrl + Click para varios)</label>
+              <select id="dotsActivos1" multiple size="5">
+                <option value="vacio" selected>-- Vacío --</option>
+                <option value="electro">Electrocución</option>
+                <option value="quemadura">Quemadura</option>
+                <option value="torbellino">Torbellino</option>
+                <option value="sangrado">Sangrado</option>
+              </select>
+            </div>
+            <div class="stats-grid">
+              <div class="input-group">
+                <label>Dado del DoT</label>
+                <input type="number" id="dadoDot1" min="1" max="10" value="5">
+              </div>
+              <div class="input-group">
+                <label>Dado Sangrado</label>
+                <input type="number" id="dadoSangrado1" min="1" max="10" value="5">
+              </div>
+            </div>
+          </div>
+
+          <div class="effect-section">
+            <div class="input-group">
+              <label>Estado Inicial Activo</label>
+              <select id="efecto1">
+                <option value="ninguno">Ninguno</option>
+                <option value="prision">Prisión (Anula turno)</option>
+                <option value="congelacion">Congelación (-10% Defensa)</option>
+                <option value="lentitud">Lentitud (Baja Velocidad)</option>
+                <option value="vulnerabilidad">Vulnerabilidad (Recibe más daño)</option>
+                <option value="debilidad">Debilidad (Hace menos daño)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Dado Estado (1-10)</label>
+              <input type="number" id="dadoEfecto1" min="1" max="10" value="5">
+            </div>
+          </div>
+          
+          <div class="active-dots-display">
+            <strong>DoTs Sufriendo:</strong> <span id="dotsDisplay1">Ninguno</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card" id="char2">
+        
+        <div class="input-group">
+          <label>Seleccionar Personaje</label>
+          <select id="selector2">
+            <option value="">-- Personalizado --</option>
+            <option value="XX">XX</option>
+            <option value="guerrillera99">guerrillera99</option>
+          </select>
+        </div>
+
+        <div class="static-panel">
+          <div class="img-placeholder" id="img-container2">
+            <img id="sprite2" src="assets/default.png" alt="Sprite P2" onerror="this.src=''; this.alt='Sin Imagen'">
+          </div>
+          <div class="stats-list">
+            <div class="stat-row"><strong>Vida Max:</strong> <span id="base-vida2">-</span></div>
+            <div class="stat-row"><strong>Defensa:</strong> <span id="base-defensa2">-</span></div>
+            <div class="stat-row"><strong>Fuerza:</strong> <span id="base-fuerza2">-</span></div>
+            <div class="stat-row"><strong>Inteligencia:</strong> <span id="base-inteligencia2">-</span></div>
+            <div class="stat-row"><strong>Poder:</strong> <span id="base-poder2">-</span></div>
+            <div class="stat-row"><strong>Velocidad:</strong> <span id="base-velocidad2">-</span></div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="interactive-panel">
+          <div class="input-group">
+            <label>Nombre Actual</label>
+            <input type="text" id="name2" placeholder="Nombre" value="Jugador 2">
+          </div>
+          
+          <div class="stats-grid">
+            <div class="input-group">
+              <label>Vida Actual</label>
+              <input type="number" id="vida2" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Defensa</label>
+              <input type="number" id="defensa2" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Fuerza</label>
+              <input type="number" id="fuerza2" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Inteligencia</label>
+              <input type="number" id="inteligencia2" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Poder</label>
+              <input type="number" id="poder2" min="0" value="0">
+            </div>
+            <div class="input-group">
+              <label>Velocidad</label>
+              <input type="number" id="velocidad2" min="0" value="0">
+            </div>
+          </div>
+
+          <div class="action-section">
+            <div class="input-group">
+              <label>Acción a realizar</label>
+              <select id="accion2">
+                <option value="fuerza">Ataque Físico (Fuerza)</option>
+                <option value="poder">Ataque Mágico (Poder)</option>
+                <option value="velocidad">Esquive / Velocidad</option>
+                <option value="defensa">Bloqueo (Defensa)</option>
+                <option value="canalizacion">Canalización</option>
+                <option value="infusion">Infusión</option>
+                <option value="disparo">Disparo</option>
+                <option value="disparo_infundido">Disparo Infundido</option>
+                <option value="defensa_imbuida">Defensa Imbuida</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Dado Acción (1-10)</label>
+              <input type="number" id="dado2" min="1" max="10" value="5">
+            </div>
+          </div>
+
+          <div class="dot-section" id="dotPanel2" style="display: none;">
+            <h4>🩸 Aplicar DoT al Enemigo</h4>
+            <div class="input-group">
+              <label>Seleccionar DoTs (Ctrl + Click para varios)</label>
+              <select id="dotsActivos2" multiple size="5">
+                <option value="vacio" selected>-- Vacío --</option>
+                <option value="electro">Electrocución</option>
+                <option value="quemadura">Quemadura</option>
+                <option value="torbellino">Torbellino</option>
+                <option value="sangrado">Sangrado</option>
+              </select>
+            </div>
+            <div class="stats-grid">
+              <div class="input-group">
+                <label>Dado del DoT</label>
+                <input type="number" id="dadoDot2" min="1" max="10" value="5">
+              </div>
+              <div class="input-group">
+                <label>Dado Sangrado</label>
+                <input type="number" id="dadoSangrado2" min="1" max="10" value="5">
+              </div>
+            </div>
+          </div>
+
+          <div class="effect-section">
+            <div class="input-group">
+              <label>Estado Inicial Activo</label>
+              <select id="efecto2">
+                <option value="ninguno">Ninguno</option>
+                <option value="prision">Prisión (Anula turno)</option>
+                <option value="congelacion">Congelación (-10% Defensa)</option>
+                <option value="lentitud">Lentitud (Baja Velocidad)</option>
+                <option value="vulnerabilidad">Vulnerabilidad (Recibe más daño)</option>
+                <option value="debilidad">Debilidad (Hace menos daño)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Dado Estado (1-10)</label>
+              <input type="number" id="dadoEfecto2" min="1" max="10" value="5">
+            </div>
+          </div>
+
+          <div class="active-dots-display">
+            <strong>DoTs Sufriendo:</strong> <span id="dotsDisplay2">Ninguno</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <button id="btnCalcular">Procesar Intercambio</button>
+
+    <div class="results" id="resultados"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
