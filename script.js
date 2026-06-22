@@ -1,7 +1,13 @@
 // --- BASE DE DATOS Y CONSTANTES ---
 const baseDatosPersonajes = {
-  "Ese": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 5 },
-  "Kim": { vida: 15, defensa: 3, fuerza: 2, inteligencia: 20, poder: 15, velocidad: 5 }
+  "Yuki Lowes": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 5 },
+  "Kim": { vida: 20, defensa: 1, fuerza: 4, inteligencia: 20, poder: 10, velocidad: 5 },
+  "Gabriel Heart Ligth": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 15, velocidad: 10 },
+  "Arageul Arashikota": { vida: 5, defensa: 5, fuerza: 5, inteligencia: 20, poder: 20, velocidad: 5 },
+  "Namui": { vida: 15, defensa: 2, fuerza: 10, inteligencia: 20, poder: 3, velocidad: 10 },
+  "Elizabeth": { vida: 15, defensa: 5, fuerza: 10, inteligencia: 5, poder: 15, velocidad: 10 },
+  "Adrian Gallar": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 10, poder: 15, velocidad: 15 },
+  "Nyx Benevendo": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 15, velocidad: 10 }
 };
 
 const multiplicadores = {
