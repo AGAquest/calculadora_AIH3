@@ -1,7 +1,7 @@
 // --- BASE DE DATOS Y CONSTANTES ---
 const baseDatosPersonajes = {
   "Yuki Lowes": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 5 },
-  "Kim": { vida: 20, defensa: 1, fuerza: 4, inteligencia: 20, poder: 10, velocidad: 5 },
+  "Koichi Mikazuki": { vida: 20, defensa: 1, fuerza: 4, inteligencia: 20, poder: 10, velocidad: 5 },
   "Gabriel Heart Ligth": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 15, velocidad: 10 },
   "Arageul Arashikota": { vida: 5, defensa: 5, fuerza: 5, inteligencia: 20, poder: 20, velocidad: 5 },
   "Namui": { vida: 15, defensa: 2, fuerza: 10, inteligencia: 20, poder: 3, velocidad: 10 },
