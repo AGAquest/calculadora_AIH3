@@ -8,7 +8,9 @@ const baseDatosPersonajes = {
   "Namui": { vida: 15, defensa: 2, fuerza: 10, inteligencia: 20, poder: 3, velocidad: 10 },
   "Elizabeth": { vida: 15, defensa: 5, fuerza: 10, inteligencia: 5, poder: 15, velocidad: 10 },
   "Adrian Gallar": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 10, poder: 15, velocidad: 15 },
-  "Nyx Benevendo": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 15, velocidad: 10 }
+  "Nyx Benevendo": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 15, velocidad: 10 },
+  "Kurobane Rei": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 10, velocidad: 10 },
+  "Ryo Kamigawa": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 20, velocidad: 5 }
 };
 
 const multiplicadores = {
