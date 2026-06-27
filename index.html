@@ -3,38 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Combate - DoTs y Sprites</title>
+  <title>Calculadora de Combate Pro</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div class="container">
-    <h1>Sistema de Combate</h1>
+    <h1>Sistema de Combate Avanzado</h1>
     
     <div class="turn-counter">
       <h2>Turno Actual: <span id="turnoDisplay">1</span></h2>
     </div>
 
     <div class="battlefield">
+      <!-- JUGADOR 1 -->
       <div class="card" id="char1">
         
         <div class="input-group">
-          <label>Seleccionar Personaje</label>
-          <select id="selector1">
-            <option value="">-- Personalizado --</option>
-            <option value="Yuki Lowes">Yuki Lowes</option>
-            <option value="Koichi Mikazuki">Koichi Mikazuki</option>
-            <option value="Aeris Luneveil">Aeris Luneveil</option>
-            <option value="Gabriel Heart Ligth">Gabriel Heart Ligth</option>
-            <option value="Arageul Arashikota">Arageul Arashikota</option>
-            <option value="Namui">Namui</option>
-            <option value="Elizabeth">Elizabeth</option>
-            <option value="Adrian Gallar">Adrian Gallar</option>
-            <option value="Nyx Benevendo">Nyx Benevendo</option>
-            <option value="Ryo Kamigawa">Ryo Kamigawa</option>
-            <option value="Kurobane Rei">Kurobane Rei</option>
-            <option value="Zyra">Zyra</option>
-          </select>
+          <label>Combatiente</label>
+          <button type="button" id="btn-select1" class="btn-roster">Elegir Personaje 🔍</button>
         </div>
 
         <div class="static-panel">
@@ -48,6 +35,17 @@
             <div class="stat-row"><strong>Inteligencia:</strong> <span id="base-inteligencia1">-</span></div>
             <div class="stat-row"><strong>Poder:</strong> <span id="base-poder1">-</span></div>
             <div class="stat-row"><strong>Velocidad:</strong> <span id="base-velocidad1">-</span></div>
+          </div>
+        </div>
+
+        <!-- BARRA DE SALUD -->
+        <div class="health-section">
+          <div class="health-bar-container">
+            <div id="health-bar1" class="health-bar-fill fill-healthy" style="width: 100%;"></div>
+          </div>
+          <div class="health-labels">
+            <span id="health-status1" class="health-status-text">ÓPTIMO</span>
+            <span class="health-values"><span id="health-num1">0</span> / <span id="health-base-num1">0</span> HP</span>
           </div>
         </div>
 
@@ -110,7 +108,7 @@
           <div class="dot-section" id="dotPanel1" style="display: none;">
             <h4>🩸 Aplicar DoT al Enemigo</h4>
             <div class="input-group">
-              <label>Seleccionar DoTs (Ctrl + Click para varios)</label>
+              <label>Seleccionar DoTs (Ctrl+Click para varios)</label>
               <select id="dotsActivos1" multiple size="5">
                 <option value="vacio" selected>-- Vacío --</option>
                 <option value="electro">Electrocución</option>
@@ -121,7 +119,7 @@
             </div>
             <div class="stats-grid">
               <div class="input-group">
-                <label>Dado del DoT</label>
+                <label>Dado DoT</label>
                 <input type="number" id="dadoDot1" min="1" max="10" value="5">
               </div>
               <div class="input-group">
@@ -156,25 +154,12 @@
         </div>
       </div>
 
+      <!-- JUGADOR 2 -->
       <div class="card" id="char2">
         
         <div class="input-group">
-          <label>Seleccionar Personaje</label>
-          <select id="selector2">
-            <option value="">-- Personalizado --</option>
-            <option value="Yuki Lowes">Yuki Lowes</option>
-            <option value="Koichi Mikazuki">Koichi Mikazuki</option>
-            <option value="Aeris Luneveil">Aeris Luneveil</option>
-            <option value="Gabriel Heart Ligth">Gabriel Heart Ligth</option>
-            <option value="Arageul Arashikota">Arageul Arashikota</option>
-            <option value="Namui">Namui</option>
-            <option value="Elizabeth">Elizabeth</option>
-            <option value="Adrian Gallar">Adrian Gallar</option>
-            <option value="Nyx Benevendo">Nyx Benevendo</option>
-            <option value="Ryo Kamigawa">Ryo Kamigawa</option>
-            <option value="Kurobane Rei">Kurobane Rei</option>
-            <option value="Zyra">Zyra</option>
-          </select>
+          <label>Combatiente</label>
+          <button type="button" id="btn-select2" class="btn-roster">Elegir Personaje 🔍</button>
         </div>
 
         <div class="static-panel">
@@ -188,6 +173,17 @@
             <div class="stat-row"><strong>Inteligencia:</strong> <span id="base-inteligencia2">-</span></div>
             <div class="stat-row"><strong>Poder:</strong> <span id="base-poder2">-</span></div>
             <div class="stat-row"><strong>Velocidad:</strong> <span id="base-velocidad2">-</span></div>
+          </div>
+        </div>
+
+        <!-- BARRA DE SALUD -->
+        <div class="health-section">
+          <div class="health-bar-container">
+            <div id="health-bar2" class="health-bar-fill fill-healthy" style="width: 100%;"></div>
+          </div>
+          <div class="health-labels">
+            <span id="health-status2" class="health-status-text">ÓPTIMO</span>
+            <span class="health-values"><span id="health-num2">0</span> / <span id="health-base-num2">0</span> HP</span>
           </div>
         </div>
 
@@ -250,7 +246,7 @@
           <div class="dot-section" id="dotPanel2" style="display: none;">
             <h4>🩸 Aplicar DoT al Enemigo</h4>
             <div class="input-group">
-              <label>Seleccionar DoTs (Ctrl + Click para varios)</label>
+              <label>Seleccionar DoTs (Ctrl+Click para varios)</label>
               <select id="dotsActivos2" multiple size="5">
                 <option value="vacio" selected>-- Vacío --</option>
                 <option value="electro">Electrocución</option>
@@ -261,7 +257,7 @@
             </div>
             <div class="stats-grid">
               <div class="input-group">
-                <label>Dado del DoT</label>
+                <label>Dado DoT</label>
                 <input type="number" id="dadoDot2" min="1" max="10" value="5">
               </div>
               <div class="input-group">
@@ -297,9 +293,23 @@
       </div>
     </div>
 
-    <button id="btnCalcular">Procesar Intercambio</button>
+    <div class="action-buttons-container">
+      <button id="btnDeshacer" class="btn-undo">↩ Deshacer Turno</button>
+      <button id="btnCalcular">Procesar Intercambio ⚔️</button>
+    </div>
 
     <div class="results" id="resultados"></div>
+  </div>
+
+  <!-- RULETA DE SELECCIÓN DE PERSONAJES ESTILO JUEGO DE LUCHA -->
+  <div id="modal-roster" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button id="close-modal" class="btn-close-modal">✖ Cerrar</button>
+      <h2>Selecciona un Combatiente</h2>
+      <div id="roster-grid" class="roster-grid">
+        <!-- Los personajes se inyectarán aquí desde JS -->
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
