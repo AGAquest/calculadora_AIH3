@@ -12,7 +12,10 @@ const baseDatosPersonajes = {
   "Kurobane Rei": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 10, velocidad: 10 },
   "Ryo Kamigawa": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 20, velocidad: 5 },
   "Zyra": { vida: 15, defensa: 9, fuerza: 15, inteligencia: 10, poder: 9, velocidad: 2 },
-  "Tae Inazuma":{vida: 16, defensa: 1, fuerza: 5, inteligencia: 20, poder: 16, velocidad: 2 }
+  "Tae Inazuma":{vida: 16, defensa: 1, fuerza: 5, inteligencia: 20, poder: 16, velocidad: 2 },
+  "Todoroki shoto":{vida: 10, defensa: 10, fuerza: 5, inteligencia: 20, poder: 10, velocidad: 5 },
+  "Tatsumi.":{vida: 9, defensa: 11,    fuerza: 3, inteligencia: 20, poder: 8, velocidad: 9 },
+  "Theodore Lawrence":{vida: 8, defensa: 6, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 6 }
 };
 
 const multiplicadores = {
