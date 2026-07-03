@@ -3,7 +3,6 @@ const baseDatosPersonajes = {
   "Yuki Lowes": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 5 },
   "Koichi Mikazuki": { vida: 20, defensa: 1, fuerza: 4, inteligencia: 20, poder: 10, velocidad: 5 },
   "Aeris Luneveil": { vida: 10, defensa: 12, fuerza: 8, inteligencia: 12, poder: 9, velocidad: 9 },
-  "Gabriel Heart Ligth": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 15, velocidad: 10 },
   "Arageul Arashikota": { vida: 5, defensa: 5, fuerza: 5, inteligencia: 20, poder: 20, velocidad: 5 },
   "Namui": { vida: 15, defensa: 2, fuerza: 10, inteligencia: 20, poder: 3, velocidad: 10 },
   "Elizabeth": { vida: 15, defensa: 5, fuerza: 10, inteligencia: 5, poder: 15, velocidad: 10 },
@@ -15,7 +14,8 @@ const baseDatosPersonajes = {
   "Tae Inazuma":{vida: 16, defensa: 1, fuerza: 5, inteligencia: 20, poder: 16, velocidad: 2 },
   "Todoroki Shoto":{vida: 10, defensa: 10, fuerza: 5, inteligencia: 20, poder: 10, velocidad: 5 },
   "Tatsumi":{vida: 9, defensa: 11,    fuerza: 3, inteligencia: 20, poder: 8, velocidad: 9 },
-  "Theodore Lawrence":{vida: 8, defensa: 6, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 6 }
+  "Theodore Lawrence":{vida: 8, defensa: 6, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 6 },
+  "Kaori Nanao":{vida: 10, defensa: 3, fuerza: 4, inteligencia: 17, poder: 16, velocidad: 10 },
 };
 
 const multiplicadores = {
