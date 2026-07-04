@@ -78,7 +78,7 @@ function cambiarEquipo(id) {
   actualizarObjetivosGlobales();
 }
 
-// --- ACTUALIZADOR INTELIGENTE DE OBJETIVOS (1v1 Auto o Grupos) ---
+// --- ACTUALIZADOR INTELIGENTE DE OBJETIVOS ---
 function actualizarObjetivosGlobales() {
   const is1v1 = (activeSlots.length === 2);
 
@@ -236,13 +236,13 @@ function generarPlantillaPersonaje(id) {
         </div>
 
         <div class="active-dots-display"><strong>DoTs Sufriendo:</strong> <span id="dotsDisplay${id}">Ninguno</span></div>
-        <button class="btn-hologram" type="button" onclick="abrirModalClon(${id})">👥 Desplegar Holograma</button>
+        <button class="btn-hologram" type="button" onclick="abrirModalClon(${id})">👥 Desplegar Clon / Holograma</button>
       </div>
     </div>
   `;
 }
 
-// --- SISTEMAS MODALES Y UTILIDADES ---
+// --- SISTEMAS DE CLONACIÓN Y HOLOGRAMA ---
 let clonSourceId = null;
 document.getElementById('close-modal-clon').addEventListener('click', () => document.getElementById('modal-clon').style.display = 'none');
 
@@ -252,20 +252,46 @@ function abrirModalClon(sourceId) {
   let container = document.getElementById('clon-options');
   container.innerHTML = '';
   activeSlots.forEach(i => {
-    if(i !== sourceId) container.innerHTML += `<button onclick="ejecutarClon(${i})">Sobrescribir Slot ${i}</button>`;
+    if(i !== sourceId) {
+      container.innerHTML += `
+        <div class="clon-slot-box">
+            <h4>Sobrescribir Slot ${i}</h4>
+            <div style="display:flex; gap:10px; margin-top:10px;">
+                <button style="background-color: var(--defense);" onclick="ejecutarClon(${i}, false)">🔵 Normal (x1)</button>
+                <button style="background-color: var(--damage);" onclick="ejecutarClon(${i}, true)">🔴 Extremo (x2)</button>
+            </div>
+        </div>
+      `;
+    }
   });
   modal.style.display = 'flex';
 }
 
-function ejecutarClon(targetId) {
+function ejecutarClon(targetId, esExtremo) {
+  guardarEstadoTurno(); // Guardar el estado actual por si se desea deshacer
   let src = clonSourceId;
   
   let baseName = document.getElementById(`name${src}`).value;
-  let clonName = baseName.includes("(Holograma)") ? baseName : baseName + " (Holograma)";
-  document.getElementById(`name${targetId}`).value = clonName;
+  // Limpiamos etiquetas previas por si clonan a un clon
+  let cleanName = baseName.replace(" (Holograma)", "").replace(" (Clon Extremo)", "");
+  let suffix = esExtremo ? " (Clon Extremo)" : " (Holograma)";
+  document.getElementById(`name${targetId}`).value = cleanName + suffix;
 
-  ['vida', 'defensa', 'fuerza', 'inteligencia', 'poder', 'velocidad'].forEach(attr => { document.getElementById(`${attr}${targetId}`).value = document.getElementById(`${attr}${src}`).value; });
-  ['vida', 'defensa', 'fuerza', 'inteligencia', 'poder', 'velocidad'].forEach(attr => { document.getElementById(`base-${attr}${targetId}`).textContent = document.getElementById(`base-${attr}${src}`).textContent; });
+  let multiplicador = esExtremo ? 2 : 1;
+
+  // Modificamos tanto los inputs como los textos base visuales
+  ['vida', 'defensa', 'fuerza', 'inteligencia', 'poder', 'velocidad'].forEach(attr => { 
+      let originalVal = parseFloat(document.getElementById(`${attr}${src}`).value) || 0;
+      document.getElementById(`${attr}${targetId}`).value = originalVal * multiplicador; 
+  });
+  
+  ['vida', 'defensa', 'fuerza', 'inteligencia', 'poder', 'velocidad'].forEach(attr => { 
+      let baseText = document.getElementById(`base-${attr}${src}`).textContent;
+      if(baseText !== "-") {
+         document.getElementById(`base-${attr}${targetId}`).textContent = parseFloat(baseText) * multiplicador;
+      }
+  });
+
   document.getElementById(`sprite${targetId}`).src = document.getElementById(`sprite${src}`).src;
   
   sincronizarVidaManual(targetId);
@@ -276,6 +302,7 @@ function ejecutarClon(targetId) {
   document.getElementById('modal-clon').style.display = 'none';
 }
 
+// --- RESTO DE FUNCIONES DE INTERFAZ ---
 let jugadorSeleccionando = 1;
 document.getElementById('close-modal').addEventListener('click', () => document.getElementById('modal-roster').style.display = 'none');
 function abrirRuleta(jugadorNum) {
@@ -510,7 +537,7 @@ function procesarDanoDoT_Multi(p) {
   return dmgTotalDot;
 }
 
-// --- DESHACER (Reconstruye todo el DOM del Campo) ---
+// --- DESHACER (GUARDADO Y RESTAURACIÓN CORREGIDOS) ---
 function guardarEstadoTurno() {
   const estado = { 
     turno: gameState.turno, 
@@ -520,9 +547,16 @@ function guardarEstadoTurno() {
     htmlResultados: document.getElementById('resultados').innerHTML,
     inputs: {} 
   };
+  
+  // AQUÍ ESTABA EL ERROR: Solo guardaba "vida". Ahora guarda todas las stats.
   activeSlots.forEach(i => {
     estado.inputs[i] = {
       vida: document.getElementById(`vida${i}`).value,
+      defensa: document.getElementById(`defensa${i}`).value,
+      fuerza: document.getElementById(`fuerza${i}`).value,
+      inteligencia: document.getElementById(`inteligencia${i}`).value,
+      poder: document.getElementById(`poder${i}`).value,
+      velocidad: document.getElementById(`velocidad${i}`).value,
       name: document.getElementById(`name${i}`).value,
       team: document.getElementById(`team${i}`).value,
       target: document.getElementById(`target${i}`) ? document.getElementById(`target${i}`).value : null,
@@ -548,10 +582,16 @@ document.getElementById('btnDeshacer').addEventListener('click', () => {
   document.getElementById('battlefield').innerHTML = est.htmlBattlefield;
   document.getElementById('resultados').innerHTML = est.htmlResultados;
   
+  // AHORA SÍ RESTAURA TODAS LAS STATS
   activeSlots.forEach(i => {
     vincularEventosCombatiente(i);
     let inp = est.inputs[i];
     document.getElementById(`vida${i}`).value = inp.vida;
+    document.getElementById(`defensa${i}`).value = inp.defensa;
+    document.getElementById(`fuerza${i}`).value = inp.fuerza;
+    document.getElementById(`inteligencia${i}`).value = inp.inteligencia;
+    document.getElementById(`poder${i}`).value = inp.poder;
+    document.getElementById(`velocidad${i}`).value = inp.velocidad;
     document.getElementById(`name${i}`).value = inp.name;
     document.getElementById(`team${i}`).value = inp.team;
     if(inp.target && document.getElementById(`target${i}`)) document.getElementById(`target${i}`).value = inp.target;
