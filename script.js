@@ -18,6 +18,7 @@ const baseDatosPersonajes = {
   "Kaori Nanao":{vida: 10, defensa: 3, fuerza: 4, inteligencia: 17, poder: 16, velocidad: 10 },
 };
 
+
 const multiplicadores = {
   defensa: [0.2, 0.4, 0.5, 0.6, 0.7, 0.8], fuerza: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
   poder: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5], velocidad: [0.1, 0.3, 0.5, 0.6, 0.8, 1.0],
