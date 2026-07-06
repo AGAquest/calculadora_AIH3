@@ -1,29 +1,31 @@
 // --- BASE DE DATOS Y CONSTANTES ---
 const baseDatosPersonajes = {
-  "Yuki Lowes": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 5 },
-  "Koichi Mikazuki": { vida: 20, defensa: 1, fuerza: 4, inteligencia: 20, poder: 10, velocidad: 5 },
-  "Aeris Luneveil": { vida: 10, defensa: 12, fuerza: 8, inteligencia: 12, poder: 9, velocidad: 9 },
-  "Arageul Arashikota": { vida: 5, defensa: 5, fuerza: 5, inteligencia: 20, poder: 20, velocidad: 5 },
-  "Namui": { vida: 15, defensa: 2, fuerza: 10, inteligencia: 20, poder: 3, velocidad: 10 },
-  "Elizabeth": { vida: 15, defensa: 5, fuerza: 10, inteligencia: 5, poder: 15, velocidad: 10 },
-  "Adrian Gallar": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 10, poder: 15, velocidad: 15 },
-  "Nyx Benevendo": { vida: 10, defensa: 5, fuerza: 3, inteligencia: 20, poder: 15, velocidad: 7 },
-  "Kurobane Rei": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 20, poder: 10, velocidad: 10 },
+  "Yuki Lowes": { vida: 23, defensa: 7, fuerza: 5, inteligencia: 20, poder: 46, velocidad: 7 },
+  "Koichi Mikazuki": { vida: 37, defensa: 1, fuerza: 4, inteligencia: 20, poder: 31, velocidad: 5 },
+  "Aeris Luneveil": { vida: 20, defensa: 21, fuerza: 20, inteligencia: 20, poder: 30, velocidad: 17 },
+  "Namui": { vida: 23, defensa: 10, fuerza: 19, inteligencia: 20, poder: 11, velocidad: 12 },
+  "Elizabeth": { vida: 20, defensa: 5, fuerza: 12, inteligencia: 5, poder: 18, velocidad: 10 },
+  "Adrian Gallar": { vida: 17, defensa: 5, fuerza: 12, inteligencia: 13, poder: 17, velocidad: 18 },
+  "Nyx Benevendo": { vida: 21, defensa: 5, fuerza: 4, inteligencia: 20, poder: 25, velocidad: 11 },
+  "Kurobane Rei": { vida: 20, defensa: 20, fuerza: 9, inteligencia: 26, poder: 18, velocidad: 10 },
   "Ryo Kamigawa": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 20, velocidad: 5 },
-  "Zyra": { vida: 15, defensa: 9, fuerza: 15, inteligencia: 10, poder: 9, velocidad: 2 },
+  "Zyra": { vida: 20, defensa: 11, fuerza: 20, inteligencia: 20, poder: 20, velocidad: 4 },
   "Tae Inazuma":{vida: 16, defensa: 1, fuerza: 5, inteligencia: 20, poder: 16, velocidad: 2 },
-  "Todoroki Shoto":{vida: 10, defensa: 10, fuerza: 5, inteligencia: 20, poder: 10, velocidad: 5 },
-  "Tatsumi":{vida: 9, defensa: 11,    fuerza: 3, inteligencia: 20, poder: 8, velocidad: 9 },
-  "Theodore Lawrence":{vida: 8, defensa: 6, fuerza: 5, inteligencia: 20, poder: 15, velocidad: 6 },
+  "Tatsumi":{vida: 10, defensa: 11,    fuerza: 5, inteligencia: 20, poder: 14, velocidad: 10 },
+  "Theodore Lawrence":{vida: 9, defensa: 7, fuerza: 7, inteligencia: 20, poder: 19, velocidad: 8 },
   "Kaori Nanao":{vida: 10, defensa: 3, fuerza: 4, inteligencia: 17, poder: 16, velocidad: 10 },
 };
 
 
 const multiplicadores = {
-  defensa: [0.2, 0.4, 0.5, 0.6, 0.7, 0.8], fuerza: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
-  poder: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5], velocidad: [0.1, 0.3, 0.5, 0.6, 0.8, 1.0],
-  canalizacion: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6], infusion: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
-  disparo: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7], disparo_infundido: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+  defensa: [0.2, 0.4, 0.5, 0.6, 0.7, 0.8], 
+  fuerza: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
+  poder: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5], 
+  velocidad: [0.1, 0.3, 0.5, 0.6, 0.8, 1.0],
+  canalizacion: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6], 
+  infusion: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+  disparo: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7], 
+  disparo_infundido: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
   defensa_imbuida: [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 };
 
