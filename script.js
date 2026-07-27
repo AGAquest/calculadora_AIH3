@@ -1,32 +1,43 @@
 // --- BASE DE DATOS Y CONSTANTES ---
 const baseDatosPersonajes = {
-  "Yuki Lowes": { vida: 23, defensa: 7, fuerza: 5, inteligencia: 20, poder: 46, velocidad: 7 },
-  "Koichi Mikazuki": { vida: 37, defensa: 1, fuerza: 4, inteligencia: 20, poder: 31, velocidad: 5 },
-  "Aeris Luneveil": { vida: 20, defensa: 21, fuerza: 20, inteligencia: 20, poder: 30, velocidad: 17 },
-  "Namui": { vida: 23, defensa: 10, fuerza: 19, inteligencia: 20, poder: 11, velocidad: 12 },
-  "Elizabeth": { vida: 20, defensa: 5, fuerza: 12, inteligencia: 5, poder: 18, velocidad: 10 },
-  "Adrian Gallar": { vida: 17, defensa: 5, fuerza: 12, inteligencia: 13, poder: 17, velocidad: 18 },
-  "Nyx Benevendo": { vida: 21, defensa: 5, fuerza: 4, inteligencia: 20, poder: 25, velocidad: 11 },
-  "Kurobane Rei": { vida: 20, defensa: 20, fuerza: 9, inteligencia: 26, poder: 18, velocidad: 10 },
+  "Yuki Lowes": { vida: 26, defensa: 7, fuerza: 8, inteligencia: 22, poder: 57, velocidad: 7 },
+  "Koichi Mikazuki": { vida: 50, defensa: 1, fuerza: 9, inteligencia: 25, poder: 50, velocidad: 5 },
+  "Aeris Luneveil": { vida: 29, defensa: 21, fuerza: 29, inteligencia: 31, poder: 48, velocidad: 18 },
+  "Namui": { vida: 29, defensa: 10, fuerza: 30, inteligencia: 27, poder: 15, velocidad: 17 },
+  "Elizabeth": { vida: 22, defensa: 5, fuerza: 18, inteligencia: 7, poder: 18, velocidad: 10 },
+  "Adrian Gallar": { vida: 23, defensa: 5, fuerza: 20, inteligencia: 18, poder: 18, velocidad: 19 },
+  "Nyx Benevendo": { vida: 26, defensa: 5, fuerza: 5, inteligencia: 20, poder: 33, velocidad: 11 },
+  "Kurobane Rei": { vida: 24, defensa: 20, fuerza: 12, inteligencia: 29, poder: 22, velocidad: 10 },
   "Ryo Kamigawa": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 20, velocidad: 5 },
-  "Zyra": { vida: 20, defensa: 11, fuerza: 20, inteligencia: 20, poder: 20, velocidad: 4 },
-  "Tae Inazuma":{vida: 21, defensa: 1, fuerza: 5, inteligencia: 20, poder: 38, velocidad: 2 },
-  "Tatsumi":{vida: 10, defensa: 11,    fuerza: 5, inteligencia: 20, poder: 14, velocidad: 10 },
-  "Theodore Lawrence":{vida: 9, defensa: 7, fuerza: 7, inteligencia: 20, poder: 19, velocidad: 8 },
-  "Kaori Nanao":{vida: 10, defensa: 3, fuerza: 4, inteligencia: 17, poder: 16, velocidad: 10 },
+  "Zyra": { vida: 25, defensa: 11, fuerza: 25, inteligencia: 25, poder: 32, velocidad: 4 },
+  "Tae Inazuma": { vida: 23, defensa: 1, fuerza: 10, inteligencia: 22, poder: 39, velocidad: 2 },
+  "Tatsumi": { vida: 10, defensa: 11, fuerza: 5, inteligencia: 20, poder: 14, velocidad: 10 },
+  "Theodore Lawrence": { vida: 11, defensa: 7, fuerza: 7, inteligencia: 20, poder: 21, velocidad: 8 },
+  "Kaori Nanao": { vida: 13, defensa: 3, fuerza: 4, inteligencia: 17, poder: 21, velocidad: 10 },
+  "Nerine": { vida: 17, defensa: 1, fuerza: 6, inteligencia: 20, poder: 20, velocidad: 1 },
+  "Adelheid": { vida: 10, defensa: 5, fuerza: 10, inteligencia: 15, poder: 15, velocidad: 5 },
+  "Ezra": { vida: 7, defensa: 5, fuerza: 11, inteligencia: 20, poder: 12, velocidad: 10 },
+  "Minyul": { vida: 12, defensa: 10, fuerza: 5, inteligencia: 20, poder: 13, velocidad: 5 },
+  "Kosen": { vida: 12, defensa: 5, fuerza: 11, inteligencia: 20, poder: 12, velocidad: 12 },
+  "Anastasya": { vida: 11, defensa: 1, fuerza: 4, inteligencia: 22, poder: 37, velocidad: 1 },
+  "Wilheim": { vida: 20, defensa: 16, fuerza: 12, inteligencia: 20, poder: 17, velocidad: 2 }
 };
-
 
 const multiplicadores = {
   defensa: [0.2, 0.4, 0.5, 0.6, 0.7, 0.8], 
   fuerza: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
   poder: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5], 
   velocidad: [0.1, 0.3, 0.5, 0.6, 0.8, 1.0],
+  tecnica: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
   canalizacion: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6], 
   infusion: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
   disparo: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7], 
+  embestida: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
+  defensa_infundida: [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
   disparo_infundido: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
-  defensa_imbuida: [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  embestida_infundida: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+  dot: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
+  sangrado: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
 };
 
 // --- ESTADO GLOBAL MULTI-SLOT (SANDBOX) ---
@@ -68,7 +79,7 @@ function removerCombatiente(id) {
 
 function vincularEventosCombatiente(id) {
   document.getElementById(`dado${id}`).addEventListener('input', () => {
-    document.getElementById(`dotPanel${id}`).style.display = (document.getElementById(`dado${id}`).value == 10) ? "block" : "none";
+    document.getElementById(`dotPanel${id}`).style.display = (document.getElementById(`dado${id}`).value == 10 || document.getElementById(`dado${id}`).value == 9) ? "block" : "none";
   });
   document.getElementById(`vida${id}`).addEventListener('input', () => sincronizarVidaManual(id));
   document.getElementById(`name${id}`).addEventListener('input', actualizarObjetivosGlobales);
@@ -195,11 +206,18 @@ function generarPlantillaPersonaje(id) {
           <div class="input-group">
             <label>Acción a realizar</label>
             <select id="accion${id}">
-              <option value="fuerza">Ataque Físico (Fuerza)</option><option value="poder">Ataque de Poder (Poder)</option>
-              <option value="velocidad">Esquive / Velocidad</option><option value="defensa">Bloqueo (Defensa)</option>
-              <option value="canalizacion">Canalización</option><option value="infusion">Infusión</option>
-              <option value="disparo">Disparo</option><option value="disparo_infundido">Disparo Infundido</option>
-              <option value="defensa_imbuida">Defensa Imbuida</option>
+              <option value="fuerza">Ataque Físico (Fuerza)</option>
+              <option value="poder">Ataque de Poder (Poder)</option>
+              <option value="velocidad">Esquive / Velocidad</option>
+              <option value="defensa">Bloqueo (Defensa)</option>
+              <option value="tecnica">Técnica Ofensiva</option>
+              <option value="canalizacion">Canalización</option>
+              <option value="infusion">Infusión</option>
+              <option value="disparo">Disparo</option>
+              <option value="embestida">Embestida</option>
+              <option value="defensa_infundida">Defensa Infundida</option>
+              <option value="disparo_infundido">Disparo Infundido</option>
+              <option value="embestida_infundida">Embestida Infundida</option>
             </select>
           </div>
           <div class="input-group"><label>Dado Acción</label><input type="number" id="dado${id}" min="1" max="10" value="5"></div>
@@ -221,21 +239,26 @@ function generarPlantillaPersonaje(id) {
             </select>
           </div>
           <div class="stats-grid">
-            <div class="input-group"><label>DADO DOT</label><input type="number" id="dadoDot${id}" min="1" max="10" value="5"></div>
-            <div class="input-group"><label>DADO SANGRADO</label><input type="number" id="dadoSangrado${id}" min="1" max="10" value="5"></div>
+            <div class="input-group"><label>DADO DOT (Mult)</label><input type="number" id="dadoDot${id}" min="1" max="10" value="5"></div>
+            <div class="input-group"><label>DADO SANG (Grado)</label><input type="number" id="dadoSangrado${id}" min="1" max="10" value="5"></div>
           </div>
         </div>
 
-        <div class="effect-section">
-          <div class="input-group">
+        <div class="effect-section" style="grid-template-columns: 1.5fr 1fr 1fr; gap: 0.8rem; align-items: end;">
+          <div class="input-group" style="margin-bottom:0;">
             <label>Estado Inicial</label>
             <select id="efecto${id}">
-              <option value="ninguno">Ninguno</option><option value="prision">Prisión</option>
-              <option value="congelacion">Congelación</option><option value="lentitud">Lentitud</option>
-              <option value="vulnerabilidad">Vulnerabilidad</option><option value="debilidad">Debilidad</option>
+              <option value="ninguno">Ninguno</option>
+              <option value="prision">Prisión</option>
+              <option value="congelacion">Congelación</option>
+              <option value="lentitud">Lentitud</option>
+              <option value="vulnerabilidad">Vulnerabilidad</option>
+              <option value="debilidad">Debilidad</option>
+              <option value="envenenamiento">Envenenamiento</option>
             </select>
           </div>
-          <div class="input-group"><label>Dado Estado</label><input type="number" id="dadoEfecto${id}" min="1" max="10" value="5"></div>
+          <div class="input-group" style="margin-bottom:0;"><label>Dado E1(%)</label><input type="number" id="dadoEfecto${id}" min="1" max="10" value="5"></div>
+          <div class="input-group" style="margin-bottom:0;"><label>Dado E2(T)</label><input type="number" id="dadoEfecto2${id}" min="1" max="10" value="5"></div>
         </div>
 
         <div class="active-dots-display"><strong>DoTs Sufriendo:</strong> <span id="dotsDisplay${id}">Ninguno</span></div>
@@ -271,18 +294,16 @@ function abrirModalClon(sourceId) {
 }
 
 function ejecutarClon(targetId, esExtremo) {
-  guardarEstadoTurno(); // Guardar el estado actual por si se desea deshacer
+  guardarEstadoTurno(); 
   let src = clonSourceId;
   
   let baseName = document.getElementById(`name${src}`).value;
-  // Limpiamos etiquetas previas por si clonan a un clon
   let cleanName = baseName.replace(" (Holograma)", "").replace(" (Clon Extremo)", "");
   let suffix = esExtremo ? " (Clon Extremo)" : " (Holograma)";
   document.getElementById(`name${targetId}`).value = cleanName + suffix;
 
   let multiplicador = esExtremo ? 2 : 1;
 
-  // Modificamos tanto los inputs como los textos base visuales
   ['vida', 'defensa', 'fuerza', 'inteligencia', 'poder', 'velocidad'].forEach(attr => { 
       let originalVal = parseFloat(document.getElementById(`${attr}${src}`).value) || 0;
       document.getElementById(`${attr}${targetId}`).value = originalVal * multiplicador; 
@@ -385,9 +406,9 @@ function ejecutarFeedbackVisual(idTarget, accionEjecutada, sufrioDano, esGolpeFu
     if (inputVida) { inputVida.classList.add('input-flash-damage'); setTimeout(() => inputVida.classList.remove('input-flash-damage'), 600); }
     return;
   }
-  if (["fuerza", "disparo", "disparo_infundido"].includes(accionEjecutada)) card.classList.add('fx-lunge');
-  else if (["poder", "canalizacion", "infusion"].includes(accionEjecutada)) card.classList.add('fx-magic');
-  else if (["defensa", "defensa_imbuida"].includes(accionEjecutada)) card.classList.add('fx-block');
+  if (["fuerza", "disparo", "disparo_infundido", "embestida", "embestida_infundida"].includes(accionEjecutada)) card.classList.add('fx-lunge');
+  else if (["poder", "canalizacion", "infusion", "tecnica"].includes(accionEjecutada)) card.classList.add('fx-magic');
+  else if (["defensa", "defensa_infundida"].includes(accionEjecutada)) card.classList.add('fx-block');
   else if (accionEjecutada === "velocidad") card.classList.add('fx-dodge');
 }
 
@@ -414,23 +435,62 @@ function obtenerDatosPersonaje(num) {
     isWeakness: document.getElementById(`debilidad${num}`).checked, 
     efecto: document.getElementById(`efecto${num}`).value,
     dadoEfecto: parseInt(document.getElementById(`dadoEfecto${num}`).value) || 1,
+    dadoEfecto2: parseInt(document.getElementById(`dadoEfecto2${num}`).value) || 1,
     nuevosDotsGenerados: dots, dadoDot: parseInt(document.getElementById(`dadoDot${num}`).value) || 1, dadoSangrado: parseInt(document.getElementById(`dadoSangrado${num}`).value) || 1,
     mensajes: [], danioRecibidoFrame: 0 
   };
 }
 
 // --- MATEMÁTICAS NÚCLEO ---
-function calcularVulnerabilidad(dado) {
-  if (dado === 1) return 0; if (dado >= 2 && dado <= 3) return 0.05;
-  if (dado >= 4 && dado <= 5) return 0.1; if (dado >= 6 && dado <= 7) return 0.15;
-  if (dado >= 8 && dado <= 9) return 0.2; return 0.25;
+function getIdx(d) {
+  if(d <= 1) return 0;
+  if(d <= 3) return 1;
+  if(d <= 5) return 2;
+  if(d <= 7) return 3;
+  if(d <= 9) return 4;
+  return 5;
+}
+
+function calcularPorcentajeVulnDeb(dado) {
+  if (dado <= 1) return 0; 
+  if (dado <= 3) return 0.05;
+  if (dado <= 5) return 0.1; 
+  if (dado <= 7) return 0.15;
+  if (dado <= 9) return 0.2; 
+  return 0.25;
+}
+
+function calcularPorcentajeLentitud(dado) {
+  if (dado <= 5) return 0;
+  if (dado <= 7) return 0.1;
+  if (dado <= 9) return 0.2;
+  return 0.3;
 }
 
 function aplicarEstadosPrevios(p) {
-  if (p.efecto === "congelacion") { p.defensaBase = Math.floor(p.defensaBase * 0.9); p.mensajes.push("❄️ Congelación: Defensa -10%."); }
+  // Aplicar reducción de defensa si está sangrando
+  let sDot = gameState.dots[p.id]?.find(d => d.tipo === 'sangrado');
+  if (sDot) {
+      let pen = 0;
+      if (sDot.grado === 1) pen = 0.20;
+      else if (sDot.grado === 2) pen = 0.40;
+      else if (sDot.grado === 3) pen = 0.70;
+      else if (sDot.grado === 4) pen = 1.0;
+      p.defensaBase = Math.floor(p.defensaBase * (1 - pen));
+      p.mensajes.push(`🩸 Sangrado G${sDot.grado}: Defensa -${pen*100}%.`);
+  }
+
+  if (p.efecto === "congelacion") { 
+    p.defensaBase = Math.floor(p.defensaBase * 0.9); 
+    p.mensajes.push("❄️ Congelación: Defensa -10%."); 
+  }
+  
   if (p.efecto === "lentitud") {
-    let pen = p.dadoEfecto === 10 ? 0.3 : (p.dadoEfecto >= 8 ? 0.2 : (p.dadoEfecto >= 6 ? 0.1 : 0));
-    if (pen > 0) { p.velocidad = Math.floor(p.velocidad * (1 - pen)); p.mensajes.push(`⏳ Lentitud: Vel -${pen*100}%.`); }
+    let pen = calcularPorcentajeLentitud(p.dadoEfecto);
+    if (pen > 0) { 
+      p.velocidad = Math.floor(p.velocidad * (1 - pen)); 
+      p.mensajes.push(`⏳ Lentitud: Vel -${pen*100}%.`); 
+    }
   }
 }
 
@@ -441,19 +501,22 @@ function calcularAccion(p) {
     case "fuerza": stat = p.fuerza; formula = "Fuerza Pura"; break;
     case "poder": stat = p.poder; formula = "Poder Puro"; break;
     case "velocidad": stat = p.velocidad; formula = "Velocidad Pura"; break;
+    case "tecnica": stat = p.poder; formula = "Técnica"; break;
     case "canalizacion": stat = (p.fuerza + p.poder) / 2; formula = "(F+P)/2"; break;
     case "infusion": stat = (p.fuerza + p.poder) / 2; formula = "(F+P)/2"; break;
     case "disparo": stat = (p.fuerza + p.velocidad) / 2; formula = "(F+V)/2"; break;
+    case "embestida": stat = (p.fuerza + p.velocidad + p.defensaBase) / 3; formula = "(F+V+D)/3"; break;
+    case "defensa_infundida": stat = (p.defensaBase + p.poder) / 2.5; formula = "(D+P)/2.5"; break;
     case "disparo_infundido": stat = (p.fuerza + p.velocidad + p.poder) / 3; formula = "(F+V+P)/3"; break;
-    case "defensa_imbuida": stat = (p.defensaBase + p.poder) / 2.5; formula = "(D+P)/2.5"; break;
+    case "embestida_infundida": stat = (p.fuerza + p.velocidad + p.defensaBase + p.poder) / 4.5; formula = "(F+V+D+P)/4.5"; break;
   }
   
   stat = Math.floor(stat);
-  let idx = (p.dado <= 1)?0:(p.dado <= 3)?1:(p.dado <= 5)?2:(p.dado <= 7)?3:(p.dado <= 9)?4:5;
+  let idx = getIdx(p.dado);
   let mult = multiplicadores[p.accion][idx];
   let total = Math.floor(stat * mult);
 
-  const ataquesPoder = ["poder", "canalizacion", "infusion", "disparo_infundido", "defensa_imbuida"];
+  const ataquesPoder = ["poder", "tecnica", "canalizacion", "infusion", "disparo_infundido", "defensa_infundida", "embestida_infundida"];
   if (ataquesPoder.includes(p.accion) && p.inteligencia < 20) {
     let pen = (20 - p.inteligencia) * 0.05; if (pen > 1) pen = 1; 
     total = Math.floor(total * (1 - pen));
@@ -464,16 +527,26 @@ function calcularAccion(p) {
 }
 
 function aplicarEstadosPostCalculo(p) {
-  if (p.efecto === "prision" && p.dadoEfecto >= 8) { p.res.total = 0; p.mensajes.push("🛑 Prisión: Turno anulado."); }
+  if (p.efecto === "prision") { 
+    p.res.total = 0; 
+    p.mensajes.push("🛑 Prisión: Turno anulado."); 
+  }
+  if (p.efecto === "congelacion") { 
+    p.res.total = 0; 
+    // Mensaje extra ya procesado en estados previos, pero aseguramos la inmovilidad aquí
+  }
   if (p.efecto === "debilidad") {
-    let pen = p.dadoEfecto === 10 ? 0.5 : (p.dadoEfecto >= 7 ? 0.3 : (p.dadoEfecto >= 4 ? 0.2 : 0.1));
-    if (pen > 0 && p.res.total > 0) { p.res.total = Math.floor(p.res.total * (1 - pen)); p.mensajes.push(`⬇️ Debilidad: Daño -${pen*100}%.`); }
+    let pen = calcularPorcentajeVulnDeb(p.dadoEfecto);
+    if (pen > 0 && p.res.total > 0) { 
+      p.res.total = Math.floor(p.res.total * (1 - pen)); 
+      p.mensajes.push(`⬇️ Debilidad: Daño -${pen*100}%.`); 
+    }
   }
 }
 
 function registrarDanio(target, diff, attacker) {
   if (target.efecto === "vulnerabilidad") {
-    let v = calcularVulnerabilidad(target.dadoEfecto);
+    let v = calcularPorcentajeVulnDeb(target.dadoEfecto);
     diff = Math.floor(diff * (1 + v));
     target.mensajes.push(`💥 Vulnerabilidad: Recibe +${v*100}%.`);
   }
@@ -494,35 +567,73 @@ function registrarDanio(target, diff, attacker) {
 
 // --- DoTs ---
 function inyectarDoTs_Multi(A, T) {
-  if (A.dado !== 10 || A.nuevosDotsGenerados.length === 0) return;
+  if (A.dado < 9 || A.nuevosDotsGenerados.length === 0) return; // Requiere crítico general en acción o técnica
+  
   A.nuevosDotsGenerados.forEach(tipo => {
-    let dmgBase = Math.floor((A.dadoDot + (A.poder * 0.5) + (T.vidaBase * 0.1)) / 3);
+    let idxDado = getIdx(A.dadoDot);
+    let idxSangrado = getIdx(A.dadoSangrado);
     let dotEx = gameState.dots[T.id]?.find(d => d.tipo === tipo);
+
     if (tipo === 'sangrado') {
-      let fzPdMax = Math.max(A.poder, A.fuerza); let mG = 0.4, gTxt = "G1";
-      if (A.dadoSangrado >= 4 && A.dadoSangrado <= 6) { mG = 0.6; gTxt = "G2"; }
-      else if (A.dadoSangrado >= 7 && A.dadoSangrado <= 9) { mG = 0.8; gTxt = "G3"; }
-      else if (A.dadoSangrado === 10) { mG = 1.2; gTxt = "G4"; }
-      dmgBase = Math.floor((A.dadoDot + (fzPdMax * 0.5) + (T.vidaBase * 0.2) + mG) / 3);
+      let multDaño = multiplicadores.sangrado[idxDado]; // Primer dado -> Multiplicador
+      let grado = 1;
+      if (A.dadoSangrado >= 4 && A.dadoSangrado <= 7) grado = 2; // Segundo dado -> Gravedad
+      else if (A.dadoSangrado >= 8 && A.dadoSangrado <= 9) grado = 3;
+      else if (A.dadoSangrado === 10) grado = 4;
+
+      let fzPdMax = Math.max(A.poder, A.fuerza);
+      let dmgBase = Math.floor(((multDaño + (fzPdMax * 0.5) + (T.vidaBase * 0.1)) / 3) * grado);
       if(dmgBase < 1) dmgBase = 1;
+
       if (!gameState.dots[T.id]) gameState.dots[T.id] = [];
-      gameState.dots[T.id].push({ tipo: 'sangrado', dmg: dmgBase, turnos: 3, grado: gTxt }); A.mensajes.push(`🩸 Sangrado a ${T.nombre}.`); return; 
+      gameState.dots[T.id].push({ tipo: 'sangrado', dmg: dmgBase, turnos: 3, grado: grado }); 
+      A.mensajes.push(`🩸 Sangrado G${grado} aplicado a ${T.nombre}.`); 
+      return; 
     }
+
+    let multDot = multiplicadores.dot[idxDado];
+    let dmgBase = Math.floor((multDot + (A.poder * 0.5)) / 3);
     if(dmgBase < 1) dmgBase = 1; 
+
     if (dotEx) {
-      if (tipo === 'electro') { dotEx.turnos *= 2; A.mensajes.push(`⚡ Electro a ${T.nombre} renovada.`); } 
-      else if (tipo === 'quemadura') { dotEx.dmg = Math.floor(dotEx.dmg * 2); dotEx.turnos = 3; A.mensajes.push(`🔥 Quemadura escaló.`); }
+      if (tipo === 'electro') { 
+        dotEx.turnos *= 2; 
+        A.mensajes.push(`⚡ Electrocución en ${T.nombre} renovada (x2 turnos).`); 
+      } 
+      else if (tipo === 'quemadura') { 
+        dotEx.dmg = Math.floor(dotEx.dmg * 2); 
+        dotEx.turnos = 3; 
+        A.mensajes.push(`🔥 Quemadura escaló (Daño x2).`); 
+      }
       else if (tipo === 'torbellino') {
         dotEx.dmg = Math.floor(dotEx.dmg * 2);
+        
         if (gameState.dots[T.id].length > 1) {
-          let detDmg = 0; gameState.dots[T.id].forEach(d => { if(d.tipo !== 'torbellino') detDmg += (d.dmg * d.turnos); });
-          T.hpVirtual -= detDmg; T.danioRecibidoFrame += detDmg;
-          A.mensajes.push(`🌪️ DETONACIÓN en ${T.nombre} (-${detDmg}).`); gameState.dots[T.id] = []; 
-        } else A.mensajes.push(`🌪️ Torbellino escaló.`);
+          let detDmg = 0; 
+          gameState.dots[T.id].forEach(d => { 
+            if(d.tipo !== 'sangrado' && d.tipo !== 'torbellino') { 
+               detDmg += (d.dmg * d.turnos); 
+               d.turnos = 0;
+            } 
+          });
+          
+          detDmg += (dotEx.dmg * dotEx.turnos);
+          dotEx.turnos = 0;
+
+          if (detDmg > 0) {
+             T.hpVirtual -= detDmg; T.danioRecibidoFrame += detDmg;
+             A.mensajes.push(`🌪️ DETONACIÓN en ${T.nombre} (-${detDmg}).`); 
+          }
+          gameState.dots[T.id] = gameState.dots[T.id].filter(d => d.turnos > 0); 
+        } else { 
+          A.mensajes.push(`🌪️ Torbellino escaló (Daño x2).`);
+          dotEx.turnos = 3;
+        }
       }
     } else { 
       if (!gameState.dots[T.id]) gameState.dots[T.id] = [];
-      gameState.dots[T.id].push({ tipo: tipo, dmg: dmgBase, turnos: 3 }); A.mensajes.push(`🎯 Aplica ${tipo.toUpperCase()} a ${T.nombre}.`); 
+      gameState.dots[T.id].push({ tipo: tipo, dmg: dmgBase, turnos: 3 }); 
+      A.mensajes.push(`🎯 Aplica ${tipo.toUpperCase()} a ${T.nombre}.`); 
     }
   });
 }
@@ -532,7 +643,8 @@ function procesarDanoDoT_Multi(p) {
   if (!gameState.dots[p.id]) gameState.dots[p.id] = [];
   gameState.dots[p.id] = gameState.dots[p.id].filter((dot, idx) => {
     dmgTotalDot += dot.dmg; dot.turnos -= 1;
-    p.mensajes.push(`<span class="dot-msg">DoT ${dot.tipo}: -${dot.dmg} HP (Restan ${dot.turnos}t)</span>`);
+    let gradoTxt = dot.tipo === 'sangrado' ? ` [G${dot.grado}]` : "";
+    p.mensajes.push(`<span class="dot-msg">DoT ${dot.tipo}${gradoTxt}: -${dot.dmg} HP (Restan ${dot.turnos}t)</span>`);
     setTimeout(() => mostrarDanioFlotante(p.id, dot.dmg, false, true), idx * 250);
     return dot.turnos > 0;
   });
@@ -540,7 +652,7 @@ function procesarDanoDoT_Multi(p) {
   return dmgTotalDot;
 }
 
-// --- DESHACER (GUARDADO Y RESTAURACIÓN CORREGIDOS) ---
+// --- DESHACER Y GUARDADO DE ESTADOS ---
 function guardarEstadoTurno() {
   const estado = { 
     turno: gameState.turno, 
@@ -551,7 +663,6 @@ function guardarEstadoTurno() {
     inputs: {} 
   };
   
-  // AQUÍ ESTABA EL ERROR: Solo guardaba "vida". Ahora guarda todas las stats.
   activeSlots.forEach(i => {
     estado.inputs[i] = {
       vida: document.getElementById(`vida${i}`).value,
@@ -563,6 +674,11 @@ function guardarEstadoTurno() {
       name: document.getElementById(`name${i}`).value,
       team: document.getElementById(`team${i}`).value,
       target: document.getElementById(`target${i}`) ? document.getElementById(`target${i}`).value : null,
+      accion: document.getElementById(`accion${i}`).value,
+      dado: document.getElementById(`dado${i}`).value,
+      efecto: document.getElementById(`efecto${i}`).value,
+      dadoEfecto: document.getElementById(`dadoEfecto${i}`).value,
+      dadoEfecto2: document.getElementById(`dadoEfecto2${i}`).value,
       directo: document.getElementById(`directo${i}`).checked,
       zona: document.getElementById(`zona${i}`).checked,
       weak: document.getElementById(`debilidad${i}`).checked,
@@ -579,13 +695,12 @@ document.getElementById('btnDeshacer').addEventListener('click', () => {
   gameState.turno = est.turno; 
   gameState.dots = JSON.parse(JSON.stringify(est.dots));
   activeSlots = [...est.activeSlots];
-  slotCounter = Math.max(...activeSlots, 0); // Ajustar el autoincrementador
+  slotCounter = Math.max(...activeSlots, 0);
 
   document.getElementById('turnoDisplay').textContent = gameState.turno; 
   document.getElementById('battlefield').innerHTML = est.htmlBattlefield;
   document.getElementById('resultados').innerHTML = est.htmlResultados;
   
-  // AHORA SÍ RESTAURA TODAS LAS STATS
   activeSlots.forEach(i => {
     vincularEventosCombatiente(i);
     let inp = est.inputs[i];
@@ -597,6 +712,11 @@ document.getElementById('btnDeshacer').addEventListener('click', () => {
     document.getElementById(`velocidad${i}`).value = inp.velocidad;
     document.getElementById(`name${i}`).value = inp.name;
     document.getElementById(`team${i}`).value = inp.team;
+    document.getElementById(`accion${i}`).value = inp.accion;
+    document.getElementById(`dado${i}`).value = inp.dado;
+    document.getElementById(`efecto${i}`).value = inp.efecto;
+    document.getElementById(`dadoEfecto${i}`).value = inp.dadoEfecto;
+    document.getElementById(`dadoEfecto2${i}`).value = inp.dadoEfecto2;
     if(inp.target && document.getElementById(`target${i}`)) document.getElementById(`target${i}`).value = inp.target;
     document.getElementById(`directo${i}`).checked = inp.directo;
     document.getElementById(`zona${i}`).checked = inp.zona;
@@ -617,7 +737,7 @@ document.getElementById('btnCalcular').addEventListener('click', () => {
   pList.forEach(p => calcularAccion(p));
   pList.forEach(p => aplicarEstadosPostCalculo(p));
 
-  const defActions = ["velocidad", "defensa", "defensa_imbuida"];
+  const defActions = ["velocidad", "defensa", "defensa_infundida"];
   let defenseMap = {}; 
   let zoneProtector = {}; 
 
@@ -671,12 +791,28 @@ document.getElementById('btnCalcular').addEventListener('click', () => {
     }
   });
 
+  // Procesamiento Final de Estados y DoTs
   pList.forEach(A => { let T = pList.find(p => p.id === A.target); if(T) inyectarDoTs_Multi(A, T); });
+  
   pList.forEach(p => {
     let dotDmg = procesarDanoDoT_Multi(p);
     p.hpVirtual -= dotDmg; p.danioRecibidoFrame += dotDmg;
-    let dmgAgo = (gameState.turno >= 10) ? 2 : (gameState.turno >= 5 ? 1 : 0);
-    if (dmgAgo > 0) { p.hpVirtual -= dmgAgo; p.danioRecibidoFrame += dmgAgo; p.mensajes.push(`💦 Agotamiento: -${dmgAgo}`); }
+
+    // Efecto de Envenenamiento Manual
+    if (p.efecto === "envenenamiento") {
+      let envDmg = Math.floor(p.hpVirtual * 0.20);
+      p.hpVirtual -= envDmg; p.danioRecibidoFrame += envDmg;
+      p.mensajes.push(`☠️ Envenenamiento: -${envDmg} HP.`);
+      setTimeout(() => mostrarDanioFlotante(p.id, envDmg, false, true), 300);
+    }
+
+    // Agotamiento Automático (a partir del 5to ciclo, 10mo, 15vo...)
+    let dmgAgo = Math.floor(gameState.turno / 5);
+    if (dmgAgo > 0) { 
+      p.hpVirtual -= dmgAgo; p.danioRecibidoFrame += dmgAgo; 
+      p.mensajes.push(`💦 Agotamiento: -${dmgAgo} HP`); 
+      setTimeout(() => mostrarDanioFlotante(p.id, dmgAgo, false, true), 400);
+    }
   });
 
   document.getElementById('resultados').innerHTML = '';
