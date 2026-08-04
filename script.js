@@ -10,9 +10,7 @@ const baseDatosPersonajes = {
   "Kurobane Rei": { vida: 24, defensa: 20, fuerza: 12, inteligencia: 29, poder: 22, velocidad: 10 },
   "Ryo Kamigawa": { vida: 10, defensa: 5, fuerza: 5, inteligencia: 15, poder: 20, velocidad: 5 },
   "Zyra": { vida: 25, defensa: 11, fuerza: 25, inteligencia: 25, poder: 32, velocidad: 4 },
-  "Tae Inazuma": { vida: 23, defensa: 1, fuerza: 10, inteligencia: 22, poder: 39, velocidad: 2 },
   "Tatsumi": { vida: 10, defensa: 11, fuerza: 5, inteligencia: 20, poder: 14, velocidad: 10 },
-  "Theodore Lawrence": { vida: 11, defensa: 7, fuerza: 7, inteligencia: 20, poder: 21, velocidad: 8 },
   "Kaori Nanao": { vida: 13, defensa: 3, fuerza: 4, inteligencia: 17, poder: 21, velocidad: 10 },
   "Nerine": { vida: 17, defensa: 1, fuerza: 6, inteligencia: 20, poder: 20, velocidad: 1 },
   "Adelheid": { vida: 10, defensa: 5, fuerza: 10, inteligencia: 15, poder: 15, velocidad: 5 },
@@ -20,7 +18,11 @@ const baseDatosPersonajes = {
   "Minyul": { vida: 12, defensa: 10, fuerza: 5, inteligencia: 20, poder: 13, velocidad: 5 },
   "Kosen": { vida: 12, defensa: 5, fuerza: 11, inteligencia: 20, poder: 12, velocidad: 12 },
   "Anastasya": { vida: 11, defensa: 1, fuerza: 4, inteligencia: 22, poder: 37, velocidad: 1 },
-  "Wilheim": { vida: 20, defensa: 16, fuerza: 12, inteligencia: 20, poder: 17, velocidad: 2 }
+  "Wilheim": { vida: 20, defensa: 16, fuerza: 12, inteligencia: 20, poder: 17, velocidad: 2 },
+  "Amo": { vida: 8, defensa: 8, fuerza: 8, inteligencia: 20, poder: 8, velocidad: 8 },
+  "Kiwo": { vida: 5, defensa: 1, fuerza: 1, inteligencia: 20, poder: 32, velocidad: 1 },
+  "Aiko": { vida: 10, defensa: 5, fuerza: 9, inteligencia: 20, poder: 10, velocidad: 6 },
+  "Katsumi": { vida: 10, defensa: 8, fuerza: 10, inteligencia: 20, poder: 10, velocidad: 2 }
 };
 
 const multiplicadores = {
